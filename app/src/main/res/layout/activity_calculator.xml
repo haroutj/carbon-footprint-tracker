@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity">
+
+    <FrameLayout
+        android:id="@+id/topBarFrameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/prev_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="#00FFFFFF"
+            app:backgroundTint="#00ffffff"
+            app:backgroundTintMode="src_in"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:fabSize="normal"
+            app:hoveredFocusedTranslationZ="0dp"
+            app:maxImageSize="24dp"
+            app:pressedTranslationZ="0dp"
+            app:rippleColor="#00ffffff"
+            app:srcCompat="@drawable/arrow_back" />
+
+        <Button
+            android:id="@+id/view_db_btn"
+            style="@android:style/Widget.Material.Light.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#00FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:foregroundTint="#00FFFFFF"
+            android:padding="18dp"
+            android:scaleX="1.05"
+            android:text="View All" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mid_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <TextView
+        android:id="@+id/new_entry_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="New Entry"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mid_guide" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/milesInLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:boxBackgroundMode="outline"
+        app:errorEnabled="true"
+        app:helperText="Miles Driven"
+        app:helperTextEnabled="true"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_entry_title_text"
+        app:passwordToggleEnabled="false"
+        tools:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/miles_in"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Miles Driven"
+            android:inputType="number|numberDecimal"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mpgInLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:boxBackgroundMode="outline"
+        app:errorEnabled="true"
+        app:helperText="MPG (average) of Vehicle"
+        app:helperTextEnabled="true"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/milesInLayout"
+        app:passwordToggleEnabled="false"
+        tools:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mpg_in"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="MPG (average) of Vehicle"
+            android:inputType="number|numberDecimal"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/calc_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|top"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_btn"
+        android:foregroundGravity="center_vertical|center|center_horizontal"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFFFF"
+        android:textScaleX="1.05"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|top"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/outline_btn"
+        android:foregroundGravity="center_vertical|center|center_horizontal"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="Save"
+        android:textColor="#FF000000"
+        android:textScaleX="1.05"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group"
+        tools:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:checkedButton="@id/gas_rbtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mpgInLayout">
+
+        <RadioButton
+            android:id="@+id/gas_rbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gasoline" />
+
+        <RadioButton
+            android:id="@+id/diesel_rbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diesel" />
+
+        <RadioButton
+            android:id="@+id/autogas_rbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autogas" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/calc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="Please input entry values to receive a calculation."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calc_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
