@@ -1,4 +1,4 @@
-# carbon-footprint-tracker
+# Carbon Footprint Tracker
 This Android app is a winning submission to the 2019 Congressional App Challenge (Congressional District CA-28).
 
 This app tracks carbon footprint through vehicle emissions in an effort to educate consumers on the carbon effect of their driving habits. This app features a database to store daily driving statistics and a graph to visualize the user's carbon footprint through driving over time. In addition, the app has statistics on the effect of the user's driving habit.
